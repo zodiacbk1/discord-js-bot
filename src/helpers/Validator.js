@@ -14,12 +14,6 @@ module.exports = class Validator {
       process.exit(1);
     }
 
-    // Validate Database Config
-    if (!process.env.MONGO_CONNECTION) {
-      error("env: MONGO_CONNECTION cannot be empty");
-      process.exit(1);
-    }
-
     // Validate Dashboard Config
     if (config.DASHBOARD.enabled) {
       if (!process.env.BOT_SECRET) {
